@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.echo.common</groupId>
   <artifactId>echo-common</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>${echo.common.version}</version>
   <packaging>pom</packaging>
 
   <description>公共聚合模块 需要使用部分包的时候，可以继承此pom</description>
@@ -23,7 +23,7 @@
 
 
   <properties>
-    <echo.common.version>${project.version}</echo.common.version>
+    <echo.common.version>1.0.0</echo.common.version>
     <spring-boot.version>2.7.1</spring-boot.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>

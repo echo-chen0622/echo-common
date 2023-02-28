@@ -19,7 +19,6 @@ public class MsgUtils {
      * 通过code 获取中文错误信息
      *
      * @param code
-     * @return
      */
     public String getMessage(String code) {
         MessageSource messageSource = SpringUtil.getBean("messageSource");
@@ -30,7 +29,6 @@ public class MsgUtils {
      * 通过code 和参数获取中文错误信息
      *
      * @param code
-     * @return
      */
     public String getMessage(String code, Object... objects) {
         MessageSource messageSource = SpringUtil.getBean("messageSource");

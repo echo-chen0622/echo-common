@@ -42,6 +42,7 @@ public class WebUtils extends org.springframework.web.util.WebUtils {
      * 判断是否ajax请求 spring ajax 返回含有 ResponseBody 或者 RestController注解
      *
      * @param handlerMethod HandlerMethod
+     *
      * @return 是否ajax请求
      */
     public boolean isBody(HandlerMethod handlerMethod) {
@@ -53,6 +54,7 @@ public class WebUtils extends org.springframework.web.util.WebUtils {
      * 读取cookie
      *
      * @param name cookie name
+     *
      * @return cookie value
      */
     public String getCookieVal(String name) {
@@ -67,6 +69,7 @@ public class WebUtils extends org.springframework.web.util.WebUtils {
      *
      * @param request HttpServletRequest
      * @param name    cookie name
+     *
      * @return cookie value
      */
     public String getCookieVal(HttpServletRequest request, String name) {
@@ -147,8 +150,6 @@ public class WebUtils extends org.springframework.web.util.WebUtils {
 
     /**
      * 从request 获取CLIENT_ID
-     *
-     * @return
      */
     @SneakyThrows
     public String getClientId(ServerHttpRequest request) {

@@ -28,7 +28,6 @@ public class LoginInterceptor implements AsyncHandlerInterceptor {
      * @param request
      * @param response
      * @param handler
-     * @return
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {

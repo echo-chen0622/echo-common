@@ -51,6 +51,7 @@ public class SqlFilterArgumentResolver implements HandlerMethodArgumentResolver 
      * 判断Controller是否包含page 参数
      *
      * @param parameter 参数
+     *
      * @return 是否过滤
      */
     @Override
@@ -63,6 +64,7 @@ public class SqlFilterArgumentResolver implements HandlerMethodArgumentResolver 
      * @param mavContainer  model 和 view
      * @param webRequest    web相关
      * @param binderFactory 入参解析
+     *
      * @return 检查后新的page对象
      * <p>
      * page 只支持查询 GET .如需解析POST获取请求报文体处理

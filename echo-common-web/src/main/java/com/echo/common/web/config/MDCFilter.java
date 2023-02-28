@@ -41,7 +41,7 @@ public class MDCFilter implements Filter {
      * 获取请求来源的IP,可以适应前置部署有Nginx等反向代理软件等的情况. HTTP_CLIENT_IP 无法伪造，所以放在第一个
      *
      * @param request
-     * @return
+     *
      * @author Stone
      */
     public static String getRequestSourceIp(HttpServletRequest request) {

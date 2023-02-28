@@ -32,6 +32,7 @@ public class ClassUtils extends org.springframework.util.ClassUtils {
      *
      * @param constructor    构造器
      * @param parameterIndex 参数序号
+     *
      * @return {MethodParameter}
      */
     public MethodParameter getMethodParameter(Constructor<?> constructor, int parameterIndex) {
@@ -45,6 +46,7 @@ public class ClassUtils extends org.springframework.util.ClassUtils {
      *
      * @param method         方法
      * @param parameterIndex 参数序号
+     *
      * @return {MethodParameter}
      */
     public MethodParameter getMethodParameter(Method method, int parameterIndex) {
@@ -59,6 +61,7 @@ public class ClassUtils extends org.springframework.util.ClassUtils {
      * @param method         Method
      * @param annotationType 注解类
      * @param <A>            泛型标记
+     *
      * @return {Annotation}
      */
     public <A extends Annotation> A getAnnotation(Method method, Class<A> annotationType) {
@@ -86,6 +89,7 @@ public class ClassUtils extends org.springframework.util.ClassUtils {
      * @param handlerMethod  HandlerMethod
      * @param annotationType 注解类
      * @param <A>            泛型标记
+     *
      * @return {Annotation}
      */
     public <A extends Annotation> A getAnnotation(HandlerMethod handlerMethod, Class<A> annotationType) {
@@ -103,6 +107,7 @@ public class ClassUtils extends org.springframework.util.ClassUtils {
      * 获取自己及所有父类的属性
      *
      * @param clazz
+     *
      * @return {String}
      */
     public static Field[] getAllFields(Class clazz) {

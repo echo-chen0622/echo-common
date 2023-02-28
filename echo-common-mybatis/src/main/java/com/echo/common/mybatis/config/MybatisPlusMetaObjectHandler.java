@@ -4,7 +4,6 @@ import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.echo.common.core.util.ClassUtils;
 import com.echo.common.core.util.SpringContextHolder;
@@ -17,7 +16,6 @@ import org.apache.ibatis.reflection.MetaObject;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 /**
  * MybatisPlus 自动填充配置

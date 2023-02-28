@@ -30,6 +30,7 @@ public class UserUtils {
      * 检验token的值是否合法 (非空且不等于undefined )
      *
      * @param token token
+     *
      * @return 是否合法
      */
     private static boolean checkToken(String token) {

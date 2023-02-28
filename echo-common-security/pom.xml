@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.echo.common</groupId>
-        <artifactId>echo-common</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-    </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.echo.common</groupId>
+    <artifactId>echo-common</artifactId>
+    <version>1.0.0</version>
+  </parent>
 
-    <artifactId>echo-common-security</artifactId>
-    <packaging>jar</packaging>
+  <artifactId>echo-common-security</artifactId>
+  <packaging>jar</packaging>
 
-    <description>echo 安全工具类</description>
+  <description>echo 安全工具类</description>
 
 
-    <dependencies>
-        <!--工具类核心包-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-web</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-cache</artifactId>
-        </dependency>
-    </dependencies>
+  <dependencies>
+    <!--工具类核心包-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-cache</artifactId>
+    </dependency>
+  </dependencies>
 </project>

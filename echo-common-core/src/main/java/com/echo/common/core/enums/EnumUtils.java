@@ -11,7 +11,6 @@ public class EnumUtils extends EnumUtil {
      * 根据枚举code获取枚举
      *
      * @param code
-     * @return
      */
     public static <T extends BaseEnum> T getEnumByCode(Class<T> clazz, Byte code) {
         for (T anEnum : clazz.getEnumConstants()) {
@@ -26,7 +25,6 @@ public class EnumUtils extends EnumUtil {
      * 根据枚举描述value获取枚举
      *
      * @param value
-     * @return
      */
     public static <T extends BaseEnum> T getEnumByValue(Class<T> clazz, String value) {
         for (T anEnum : clazz.getEnumConstants()) {
@@ -41,7 +39,6 @@ public class EnumUtils extends EnumUtil {
      * 根据枚举code获取描述value
      *
      * @param code
-     * @return
      */
     public static <T extends BaseEnum> String getValueByCode(Class<T> clazz, Byte code) {
         for (T anEnum : clazz.getEnumConstants()) {
@@ -56,7 +53,6 @@ public class EnumUtils extends EnumUtil {
      * 根据枚举描述value获取code
      *
      * @param value
-     * @return
      */
     public static <T extends BaseEnum> Byte getCodeByValue(Class<T> clazz, String value) {
         for (T anEnum : clazz.getEnumConstants()) {
@@ -71,7 +67,6 @@ public class EnumUtils extends EnumUtil {
      * 根据枚举 某方法(参数) 获取 枚举
      *
      * @param value
-     * @return
      */
     public static <T extends BaseEnum> Byte getEnumByMethod(Class<T> clazz, String value, String methodName) {
         try {

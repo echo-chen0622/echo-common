@@ -13,6 +13,7 @@ import java.text.MessageFormat;
  * 响应信息主体
  *
  * @param <T>
+ *
  * @author echo
  */
 @ToString

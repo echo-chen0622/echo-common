@@ -59,7 +59,8 @@ public class RestResponseExceptionHandler extends ResponseEntityExceptionHandler
     protected @NotNull ResponseEntity<Object> handleMethodArgumentNotValid(final @NotNull MethodArgumentNotValidException ex,
                                                                            final HttpHeaders headers,
                                                                            final HttpStatus status,
-                                                                           final WebRequest request) {
+                                                                           final WebRequest request
+                                                                          ) {
         final List<ObjectError> result = ex.getBindingResult().getAllErrors();
         Map<String, String> fields = result.stream().collect(Collectors.toMap(e -> e instanceof FieldError ? ((FieldError) e).getField() : e.getObjectName(), ObjectError::getDefaultMessage));
         return handle(ex, request, ResultCode.INVALID_ARGUMENT, fields);
@@ -77,7 +78,6 @@ public class RestResponseExceptionHandler extends ResponseEntityExceptionHandler
      *
      * @param ex
      * @param request
-     * @return
      */
     @ExceptionHandler({ApiException.class})
     public ResponseEntity<Object> handleGeneric(final ApiException ex, final WebRequest request) {

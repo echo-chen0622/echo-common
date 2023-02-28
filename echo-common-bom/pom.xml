@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.echo.common</groupId>
-        <artifactId>echo-common</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-    </parent>
+  <parent>
+    <groupId>com.echo.common</groupId>
+    <artifactId>echo-common</artifactId>
+    <version>1.0.0</version>
+  </parent>
 
-    <artifactId>echo-common-bom</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  <artifactId>echo-common-bom</artifactId>
+  <version>${echo.common.version}</version>
+  <packaging>jar</packaging>
 
-    <name>echo-common-bom</name>
-    <description>echo 基础包集合，如果需要所有基础包，可以直接引用一个bom包，就不需要再引用别的了</description>
+  <name>echo-common-bom</name>
+  <description>echo 基础包集合，如果需要所有基础包，可以直接引用一个bom包，就不需要再引用别的了</description>
 
-    <!-- 定义全局jar版本,模块使用需要再次引入但不用写版本号-->
-    <dependencies>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-web</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-cache</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-es</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-datasource</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-mybatis</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-security</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>com.echo.common</groupId>
-            <artifactId>echo-common-swagger</artifactId>
-        </dependency>
-    </dependencies>
+  <!-- 定义全局jar版本,模块使用需要再次引入但不用写版本号-->
+  <dependencies>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-cache</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-es</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-datasource</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-mybatis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-swagger</artifactId>
+    </dependency>
+  </dependencies>
 </project>
