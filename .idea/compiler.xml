@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="echo-common-es" />
+        <module name="echo-common-core" />
+        <module name="echo-common-bom" />
+        <module name="echo-common-swagger" />
+        <module name="echo-common-web" />
+        <module name="echo-common-cache" />
+        <module name="echo-common-security" />
+        <module name="echo-common-datasource" />
+        <module name="echo-common-mybatis" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
