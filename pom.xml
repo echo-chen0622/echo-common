@@ -2,9 +2,9 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.github.echo-chen0622</groupId>
+  <groupId>com.echo.common</groupId>
   <artifactId>echo-common</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <description>公共聚合模块 需要使用部分包的时候，可以继承此pom</description>
@@ -87,47 +87,47 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-bom</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-web</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-cache</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-es</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-datasource</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-mybatis</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-security</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-core</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.github.echo-chen0622</groupId>
+        <groupId>com.echo.common</groupId>
         <artifactId>echo-common-swagger</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
@@ -262,33 +262,8 @@
             </execution>
           </executions>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <configuration>
-            <tagBase>${project.artifactId}-${project.version}</tagBase>
-            <!-- tag分支的名称，project.version只包含版本，不包含SNAPSHOT后缀 -->
-            <tagNameFormat>v@${project.version}</tagNameFormat>
-            <!-- 升级子模块 -->
-            <autoVersionSubmodules>true</autoVersionSubmodules>
-            <!-- 是否生成release-pom.xml-->
-            <generateReleasePoms>false</generateReleasePoms>
-            <!-- 跳过单元测试 -->
-            <arguments>-DskipTests</arguments>
-            <!-- 执行目标，此句可省 -->
-            <goals>deploy</goals>
-          </configuration>
-        </plugin>
       </plugins>
     </pluginManagement>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-      </plugin>
-    </plugins>
-
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -313,13 +288,6 @@
       </resource>
     </resources>
   </build>
-
-  <scm>
-    <connection>scm:git:git://github.com/echo-chen0622/echo-common</connection>
-    <developerConnection>scm:git:ssh://git@github.com/echo-chen0622/echo-common</developerConnection>
-    <tag>1.0.0</tag>
-    <url>https://github.com/echo-chen0622/echo-common</url>
-  </scm>
 
   <distributionManagement>
     <repository>
