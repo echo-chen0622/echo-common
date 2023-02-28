@@ -1,8 +1,0 @@
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/config/AutoConfigure.java
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/interceptor/LoginInterceptor.java
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/config/LoginConfig.java
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/dto/UserDto.java
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/LoginRequired.java
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/util/UserUtils.java
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/util/UserCache.java
-/Users/chentiancheng/IdeaProjects/echo-common/echo-common-security/src/main/java/com/echo/common/security/dto/LoginUserDto.java
