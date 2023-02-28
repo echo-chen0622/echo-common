@@ -1,0 +1,6 @@
+com/echo/common/mybatis/resolver/SqlFilterArgumentResolver.class
+com/echo/common/mybatis/plugins/EchoPaginationInnerInterceptor.class
+com/echo/common/mybatis/CodeAutoGen.class
+com/echo/common/mybatis/MybatisAutoConfiguration.class
+com/echo/common/mybatis/base/BaseEntity.class
+com/echo/common/mybatis/config/MybatisPlusMetaObjectHandler.class

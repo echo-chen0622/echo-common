@@ -1,0 +1,6 @@
+/Users/chentiancheng/IdeaProjects/echo-common/echo-common-mybatis/src/main/java/com/echo/common/mybatis/MybatisAutoConfiguration.java
+/Users/chentiancheng/IdeaProjects/echo-common/echo-common-mybatis/src/main/java/com/echo/common/mybatis/plugins/EchoPaginationInnerInterceptor.java
+/Users/chentiancheng/IdeaProjects/echo-common/echo-common-mybatis/src/main/java/com/echo/common/mybatis/base/BaseEntity.java
+/Users/chentiancheng/IdeaProjects/echo-common/echo-common-mybatis/src/main/java/com/echo/common/mybatis/resolver/SqlFilterArgumentResolver.java
+/Users/chentiancheng/IdeaProjects/echo-common/echo-common-mybatis/src/main/java/com/echo/common/mybatis/CodeAutoGen.java
+/Users/chentiancheng/IdeaProjects/echo-common/echo-common-mybatis/src/main/java/com/echo/common/mybatis/config/MybatisPlusMetaObjectHandler.java
