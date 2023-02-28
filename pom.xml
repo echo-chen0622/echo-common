@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.echo.common</groupId>
   <artifactId>echo-common</artifactId>
-  <version>${echo.common.version}</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <description>公共聚合模块 需要使用部分包的时候，可以继承此pom</description>
