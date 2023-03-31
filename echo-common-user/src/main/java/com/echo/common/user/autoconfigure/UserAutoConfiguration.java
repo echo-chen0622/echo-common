@@ -14,6 +14,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @EnableAsync
 @Configuration
-@MapperScan(basePackages = "com.echo.common.user.mapper")
+@MapperScan(basePackages = "com.echo.common.user.**.mapper")
 @ComponentScan(basePackages = "com.echo.common.user")
 public class UserAutoConfiguration {}
