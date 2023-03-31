@@ -19,6 +19,7 @@
     <module>echo-common-swagger</module>
     <module>echo-common-cache</module>
     <module>echo-common-es</module>
+    <module>echo-common-user</module>
   </modules>
 
 
@@ -105,6 +106,11 @@
       <dependency>
         <groupId>com.echo.common</groupId>
         <artifactId>echo-common-es</artifactId>
+        <version>${echo.common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.echo.common</groupId>
+        <artifactId>echo-common-user</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>

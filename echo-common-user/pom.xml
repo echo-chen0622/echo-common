@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.echo.common</groupId>
+    <artifactId>echo-common</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>echo-common-user</artifactId>
+  <version>1.0.0</version>
+  <name>echo-common-user</name>
+  <description>人员角色包，用来访问人员角色</description>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <!--公共包-->
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-mybatis</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

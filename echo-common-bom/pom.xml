@@ -46,5 +46,9 @@
       <groupId>com.echo.common</groupId>
       <artifactId>echo-common-swagger</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.echo.common</groupId>
+      <artifactId>echo-common-user</artifactId>
+    </dependency>
   </dependencies>
 </project>

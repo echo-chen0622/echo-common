@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.echo.common.user.auto.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.echo.common.user.auto.entity.MenuEntity">
+    <!--@mbg.generated-->
+    <!--@Table e_menu-->
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="permission" jdbcType="VARCHAR" property="permission"/>
+    <result column="sort_no" jdbcType="INTEGER" property="sortNo"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="url" jdbcType="VARCHAR" property="url"/>
+    <result column="icon" jdbcType="VARCHAR" property="icon"/>
+    <result column="create_by" jdbcType="VARCHAR" property="createBy"/>
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy"/>
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id,
+    permission,
+    sort_no,
+    `name`,
+    url,
+    icon,
+    create_by,
+    create_time,
+    update_by,
+    update_time,
+    del_flag
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update e_menu
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="permission = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.permission,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="sort_no = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.sortNo,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="`name` = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.name,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="url = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.url,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="icon = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.icon,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="create_by = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.createBy,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.createTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="update_by = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.updateBy,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.updateTime,jdbcType=TIMESTAMP}
+        </foreach>
+      </trim>
+      <trim prefix="del_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=INTEGER} then #{item.delFlag,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into e_menu
+    (permission, sort_no, `name`, url, icon, create_by, create_time, update_by, update_time,
+    del_flag)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.permission,jdbcType=VARCHAR}, #{item.sortNo,jdbcType=INTEGER}, #{item.name,jdbcType=VARCHAR},
+      #{item.url,jdbcType=VARCHAR}, #{item.icon,jdbcType=VARCHAR}, #{item.createBy,jdbcType=VARCHAR},
+      #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateBy,jdbcType=VARCHAR}, #{item.updateTime,jdbcType=TIMESTAMP},
+      #{item.delFlag,jdbcType=TINYINT})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id"
+          parameterType="com.echo.common.user.auto.entity.MenuEntity"
+          useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into e_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      permission,
+      sort_no,
+      `name`,
+      url,
+      icon,
+      create_by,
+      create_time,
+      update_by,
+      update_time,
+      del_flag,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      #{permission,jdbcType=VARCHAR},
+      #{sortNo,jdbcType=INTEGER},
+      #{name,jdbcType=VARCHAR},
+      #{url,jdbcType=VARCHAR},
+      #{icon,jdbcType=VARCHAR},
+      #{createBy,jdbcType=VARCHAR},
+      #{createTime,jdbcType=TIMESTAMP},
+      #{updateBy,jdbcType=VARCHAR},
+      #{updateTime,jdbcType=TIMESTAMP},
+      #{delFlag,jdbcType=TINYINT},
+    </trim>
+    on duplicate key update
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      permission = #{permission,jdbcType=VARCHAR},
+      sort_no = #{sortNo,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      icon = #{icon,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      del_flag = #{delFlag,jdbcType=TINYINT},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
+          parameterType="com.echo.common.user.auto.entity.MenuEntity" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into e_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="permission != null and permission != ''">
+        permission,
+      </if>
+      <if test="sortNo != null">
+        sort_no,
+      </if>
+      <if test="name != null and name != ''">
+        `name`,
+      </if>
+      <if test="url != null and url != ''">
+        url,
+      </if>
+      <if test="icon != null and icon != ''">
+        icon,
+      </if>
+      <if test="createBy != null and createBy != ''">
+        create_by,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateBy != null and updateBy != ''">
+        update_by,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="permission != null and permission != ''">
+        #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="sortNo != null">
+        #{sortNo,jdbcType=INTEGER},
+      </if>
+      <if test="name != null and name != ''">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null and url != ''">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null and icon != ''">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null and createBy != ''">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null and updateBy != ''">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=TINYINT},
+      </if>
+    </trim>
+    on duplicate key update
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="permission != null and permission != ''">
+        permission = #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="sortNo != null">
+        sort_no = #{sortNo,jdbcType=INTEGER},
+      </if>
+      <if test="name != null and name != ''">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null and url != ''">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null and icon != ''">
+        icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null and createBy != ''">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null and updateBy != ''">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectByPermissionIn" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List"/>
+    from e_menu
+    where del_flag = 0
+    <if test="permissions != null and permissions.size() > 0">
+      and permission in
+      <foreach item="item" index="index" collection="permissions" open="(" separator="," close=")">
+        #{item,jdbcType=VARCHAR}
+      </foreach>
+    </if>
+  </select>
+</mapper>

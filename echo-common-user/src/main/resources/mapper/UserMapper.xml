@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.echo.common.user.auto.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.echo.common.user.auto.entity.UserEntity">
+        <!--@mbg.generated-->
+        <!--@Table e_user-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="login_name" jdbcType="VARCHAR" property="loginName"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="real_name" jdbcType="VARCHAR" property="realName"/>
+        <result column="mobile" jdbcType="INTEGER" property="mobile"/>
+        <result column="permissions" jdbcType="VARCHAR" property="permissions"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id,
+        login_name,
+        `password`,
+        real_name,
+        permissions,
+        mobile
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update e_user
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="login_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=INTEGER} then #{item.loginName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="`password` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=INTEGER} then #{item.password,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="real_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=INTEGER} then #{item.realName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="mobile = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=INTEGER} then #{item.mobile,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+            <trim prefix="permissions = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=INTEGER} then #{item.permissions,jdbcType=INTEGER}
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=INTEGER}
+        </foreach>
+    </update>
+    <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into e_user
+        (login_name, `password`, real_name, permissions, mobile)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.loginName,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR}, #{item.realName,jdbcType=VARCHAR},
+            #{item.permissions,jdbcType=VARCHAR},
+            #{item.mobile,jdbcType=INTEGER})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id"
+            parameterType="com.echo.common.user.auto.entity.UserEntity" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into e_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            login_name,
+            `password`,
+            real_name,
+            permissions,
+            mobile,
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            #{loginName,jdbcType=VARCHAR},
+            #{password,jdbcType=VARCHAR},
+            #{realName,jdbcType=VARCHAR},
+            #{permissions,jdbcType=VARCHAR},
+            #{mobile,jdbcType=INTEGER},
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER},
+            </if>
+            login_name = #{loginName,jdbcType=VARCHAR},
+            `password` = #{password,jdbcType=VARCHAR},
+            real_name = #{realName,jdbcType=VARCHAR},
+            permissions = #{permissions,jdbcType=VARCHAR},
+            mobile = #{mobile,jdbcType=INTEGER},
+        </trim>
+    </insert>
+    <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.echo.common.user.auto.entity.UserEntity" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into e_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="loginName != null and loginName != ''">
+                login_name,
+            </if>
+            <if test="password != null and password != ''">
+                `password`,
+            </if>
+            <if test="realName != null and realName != ''">
+                real_name,
+            </if>
+            <if test="permissions != null and permissions != ''">
+                permissions,
+            </if>
+            <if test="mobile != null">
+                mobile,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="loginName != null and loginName != ''">
+                #{loginName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null and password != ''">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="realName != null and realName != ''">
+                #{realName,jdbcType=VARCHAR},
+            </if>
+            <if test="permissions != null and permissions != ''">
+                #{permissions,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                #{mobile,jdbcType=INTEGER},
+            </if>
+        </trim>
+        on duplicate key update
+        <trim suffixOverrides=",">
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER},
+            </if>
+            <if test="loginName != null and loginName != ''">
+                login_name = #{loginName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null and password != ''">
+                `password` = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="realName != null and realName != ''">
+                real_name = #{realName,jdbcType=VARCHAR},
+            </if>
+            <if test="permissions != null and permissions != ''">
+                permissions = #{realName,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectByLogin" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from e_user
+        where login_name = #{loginName,jdbcType=VARCHAR}
+        and `password` = #{password,jdbcType=VARCHAR}
+        and del_flag = 0
+    </select>
+</mapper>
