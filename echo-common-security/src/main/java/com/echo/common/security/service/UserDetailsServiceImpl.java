@@ -36,7 +36,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (user == null) {
             log.info("登录用户：{} 不存在.", username);
             throw new ApiException("登录用户：" + username + " 不存在");
-        } else if (UserStatus.DELETED.getCode() == user.getDelFlag()) {
+        } else if (UserStatus.DELETED.getCode().equals(user.getDelFlag())) {
             log.info("登录用户：{} 已被删除.", username);
             throw new ApiException("对不起，您的账号：" + username + " 已被删除");
         } else if (UserStatus.DISABLE.getCode() == user.getStatus()) {

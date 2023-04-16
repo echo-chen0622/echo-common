@@ -30,6 +30,11 @@ public class AuthenticationTokenFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
+        String url = request.getServletPath();
+        if (url.contains("/login") || url.contains("/captchaImage") || url.contains("/register")) {
+            chain.doFilter(request, response);
+            return;
+        }
         LoginUser loginUser = userUtils.getUser();
         if (loginUser != null && SecurityUtils.getAuthentication() == null) {
             userUtils.verifyToken(loginUser);

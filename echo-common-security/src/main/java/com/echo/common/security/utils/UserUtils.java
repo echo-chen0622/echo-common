@@ -21,7 +21,7 @@ public class UserUtils {
     @Value("${token.expireTime:2880}")
     private int expireTime;
 
-    public static final String ECHO_COM_TOKEN = "echo_com_token";
+    public static final String ADMIN_TOKEN = "Admin-Token";
     public static final String UNDEFINED = "undefined";
     public static final String USER_SESSION_KEY = "echo_user_session_";
     public static final String TOKEN = "token";
@@ -72,7 +72,10 @@ public class UserUtils {
 
     @Nullable
     private String getToken() {
-        String token = WebUtils.getCookieVal(httpServletRequest, ECHO_COM_TOKEN);
+        String token = WebUtils.getCookieVal(httpServletRequest, ADMIN_TOKEN);
+        if (CharSequenceUtil.isEmpty(token) || !checkToken(token)) {
+            token = WebUtils.getCookieVal(httpServletRequest, TOKEN);
+        }
         if (CharSequenceUtil.isEmpty(token) || !checkToken(token)) {
             token = httpServletRequest.getHeader(TOKEN);
         }
@@ -89,12 +92,16 @@ public class UserUtils {
         //如果从缓存里拿不到，就直接返回null
         String token = UUID.randomUUID().toString();
         user.setToken(token);
+        httpServletRequest.setAttribute(USER_SESSION_KEY, user);
+        refreshToken(user);
         return userCache.login(token, user);
     }
 
     public void logout() {
         String token = getToken();
-        userCache.logout(token);
+        if (CharSequenceUtil.isNotEmpty(token)){
+            userCache.logout(token);
+        }
     }
 
     /**

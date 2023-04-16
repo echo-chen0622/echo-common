@@ -43,9 +43,11 @@ public class SysPasswordService {
         String username = usernamePasswordAuthenticationToken.getName();
         String password = usernamePasswordAuthenticationToken.getCredentials().toString();
 
-        Integer retryCount = Integer.valueOf(myCache.getCache(getCacheKey(username)));
-
-        if (retryCount == null) {
+        String cache = myCache.getCache(getCacheKey(username));
+        Integer retryCount;
+        if (cache != null) {
+            retryCount =Integer.valueOf(cache);
+        }else {
             retryCount = 0;
         }
 

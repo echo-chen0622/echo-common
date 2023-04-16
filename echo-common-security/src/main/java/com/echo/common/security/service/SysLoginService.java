@@ -15,6 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
@@ -38,6 +39,9 @@ public class SysLoginService {
 
     @Resource
     private SysConfigService configService;
+
+    @Resource
+    private HttpServletRequest httpServletRequest;
 
     /**
      * 登录验证
@@ -66,9 +70,10 @@ public class SysLoginService {
             AuthenticationContextHolder.clearContext();
         }
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
+        String token = userUtils.login(loginUser).getToken();
         recordLoginInfo(loginUser.getUserId());
         // 登录缓存，并返回token
-        return userUtils.login(loginUser).getToken();
+        return token;
     }
 
     /**
