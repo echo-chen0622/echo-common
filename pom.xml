@@ -19,6 +19,7 @@
     <module>echo-common-swagger</module>
     <module>echo-common-cache</module>
     <module>echo-common-es</module>
+<!--    <module>echo-common-generator</module>-->
   </modules>
 
 
@@ -107,6 +108,11 @@
         <artifactId>echo-common-bom</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
+<!--      <dependency>-->
+<!--        <groupId>com.echo.common</groupId>-->
+<!--        <artifactId>echo-common-generator</artifactId>-->
+<!--        <version>${echo.common.version}</version>-->
+<!--      </dependency>-->
       <dependency>
         <groupId>com.echo.common</groupId>
         <artifactId>echo-common-web</artifactId>
