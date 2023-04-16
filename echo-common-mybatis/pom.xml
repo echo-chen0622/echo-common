@@ -17,7 +17,7 @@
   <dependencies>
     <dependency>
       <groupId>com.echo.common</groupId>
-      <artifactId>echo-common-security</artifactId>
+      <artifactId>echo-common-core</artifactId>
     </dependency>
     <!--mybatis-->
     <dependency>

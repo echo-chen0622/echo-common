@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.Accessors;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.MessageFormat;
@@ -102,45 +103,49 @@ public class BaseResponse<T> {
         }
     }
 
-    //region 弃用区 直接指定code和message的方法都应该避免使用，要用统一枚举维护
-
-    /**
-     * 直接指定code和message的方法都应该避免使用，要用统一枚举维护
-     *
-     * @param code
-     * @param message
-     */
-    @Deprecated
-    public BaseResponse(int code, String message) {
-        this.code = code;
-        this.message = message;
+    @Contract(" -> new")
+    public static <T> @NotNull BaseResponse<T> ok() {
+        return new BaseResponse<>();
     }
 
-    /**
-     * 直接指定code和message的方法都应该避免使用，要用统一枚举维护
-     *
-     * @param code
-     * @param message
-     * @param data
-     */
-    @Deprecated
-    public BaseResponse(int code, String message, T data) {
-        this.code = code;
-        this.message = message;
-        this.data = data;
+    @Contract("_ -> new")
+    public static <T> @NotNull BaseResponse<T> ok(T data) {
+        return new BaseResponse<>(data);
     }
 
-    /**
-     * 直接指定code和message的方法都应该避免使用，要用统一枚举维护
-     * 正确返回，自定义message，code为200
-     *
-     * @param message
-     * @param data
-     */
-    @Deprecated
-    public BaseResponse(String message, T data) {
-        this(ResultCode.SUCCESS.getCode(), message, data);
+    @Contract("_, _ -> new")
+    public static <T> @NotNull BaseResponse<T> ok(ResultCode resultCode, Object... args) {
+        return new BaseResponse<>(resultCode, args);
     }
-    //endregion 弃用区
+
+    @Contract("_, _, _ -> new")
+    public static <T> @NotNull BaseResponse<T> ok(ResultCode resultCode, T data, Object... args) {
+        return new BaseResponse<>(resultCode, data, args);
+    }
+
+    @Contract("_, _ -> new")
+    public static <T> @NotNull BaseResponse<T> error(ResultCode resultCode, Object... args) {
+        return new BaseResponse<>(resultCode, args);
+    }
+
+    @Contract("_ -> new")
+    public static <T> @NotNull BaseResponse<T> error(Object... args) {
+        return new BaseResponse<>(ResultCode.DEFAULT_ERROR, args);
+    }
+
+    @Contract("_, _, _ -> new")
+    public static <T> @NotNull BaseResponse<T> error(ResultCode resultCode, Throwable ex, Object... args) {
+        return new BaseResponse<>(resultCode, ex, args);
+    }
+
+    @Contract("_, _, _, _ -> new")
+    public static <T> @NotNull BaseResponse<T> error(ResultCode resultCode, T data, Throwable ex, Object... args) {
+        return new BaseResponse<>(resultCode, data, ex, args);
+    }
+
+    @Contract("_ -> new")
+    public static <T> @NotNull BaseResponse<T> error(Throwable ex) {
+        return new BaseResponse<>(ResultCode.INTERNAL_ERROR, ex);
+    }
 
 }

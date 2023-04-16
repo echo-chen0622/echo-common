@@ -4,4 +4,5 @@ com.echo.common.web.config.RestTemplateConfiguration
 com.echo.common.web.config.WebMvcConfiguration
 com.echo.common.web.config.HttpLogFilter
 com.echo.common.web.config.MDCFilter
+com.echo.common.web.config.EchoConfig
 com.echo.common.web.exception.RestResponseExceptionHandler

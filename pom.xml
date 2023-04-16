@@ -19,7 +19,6 @@
     <module>echo-common-swagger</module>
     <module>echo-common-cache</module>
     <module>echo-common-es</module>
-    <module>echo-common-user</module>
   </modules>
 
 
@@ -58,6 +57,21 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper-spring-boot-starter</artifactId>
+      <version>1.4.6</version>
+    </dependency>
+    <!-- excel工具 -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
     <!--Lombok-->
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -106,11 +120,6 @@
       <dependency>
         <groupId>com.echo.common</groupId>
         <artifactId>echo-common-es</artifactId>
-        <version>${echo.common.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.echo.common</groupId>
-        <artifactId>echo-common-user</artifactId>
         <version>${echo.common.version}</version>
       </dependency>
       <dependency>

@@ -1,1 +1,1 @@
-com.echo.common.core.util.SpringContextHolder
+com.echo.common.web.utils.SpringContextHolder

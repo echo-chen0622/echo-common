@@ -24,7 +24,10 @@ public enum ResultCode {
     FILEPATH_NOT_FIND_ERROR("{0}文件路径异常，请联系系统管理员", 500),
     UPLOAD_NULL_ERROR("上传文件不能为空", 500),
     LOGIN_ERROR("登录异常，请重新登录", 303),
+    LOGIN_PASS_ERROR("密码错误，还可以再试{0}次", 303),
     TOKEN_EMPTY("登录异常，TOKEN为空，请重新登录", 303),
+    CAPTCHA_EXPIRED("验证码异常校验失败", 304),
+    RETRY_EXPIRED("密码错误超过{0}次数，请{1}后再试", 304),
     ;
 
     private final String message;
