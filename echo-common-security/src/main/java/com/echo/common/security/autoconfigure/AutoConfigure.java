@@ -1,7 +1,7 @@
 package com.echo.common.security.autoconfigure;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import com.echo.common.security.config.MybatisPlusMetaObjectHandler;
+import com.echo.common.security.handle.MybatisPlusMetaObjectHandler;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;

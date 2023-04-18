@@ -1,4 +1,4 @@
-package com.echo.common.security.config;
+package com.echo.common.security.handle;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.text.CharSequenceUtil;
@@ -16,6 +16,7 @@ import org.apache.ibatis.reflection.MetaObject;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * MybatisPlus 自动填充配置
@@ -54,7 +55,7 @@ public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         log.debug("mybatis plus start insert fill ....");
-        LocalDateTime now = LocalDateTime.now();
+        Date now = new Date();
 
 
         Field[] fields = ClassUtils.getAllFields(metaObject.getOriginalObject().getClass());
@@ -81,7 +82,7 @@ public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void updateFill(MetaObject metaObject) {
         log.debug("mybatis plus start update fill ....");
-        fillValIfNullByName("updateTime", LocalDateTime.now(), metaObject, true);
+        fillValIfNullByName("updateTime", new Date(), metaObject, true);
         fillValIfNullByName("updateBy", getUserName(), metaObject, true);
     }
 

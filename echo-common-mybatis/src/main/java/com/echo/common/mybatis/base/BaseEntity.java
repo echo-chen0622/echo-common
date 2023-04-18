@@ -29,7 +29,7 @@ public class BaseEntity implements Serializable {
      */
     @TableId(value = "id", type = IdType.AUTO)
     @Schema(description = "自增id，不赋予业务意义")
-    private Integer id;
+    private Long id;
 
     /**
      * 创建者
@@ -73,6 +73,7 @@ public class BaseEntity implements Serializable {
      * 请求参数 --- 可以用来装不是很必要做成字段的参数
      */
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    @TableField(exist = false)
     private Map<String, Object> params;
 
     public Map<String, Object> getParams() {
