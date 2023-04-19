@@ -62,9 +62,9 @@ public class BaseEntity implements Serializable {
     private Date updateTime;
 
     /**
-     * 是否逻辑删除：0-已删除，1-未删除
+     * 是否逻辑删除：0-未删除，1-已删除
      */
-    @Schema(description = "是否逻辑删除：0-已删除，1-未删除")
+    @Schema(description = "是否逻辑删除：0-未删除，1-已删除")
     @TableField(fill = FieldFill.INSERT)
     @TableLogic
     private Byte delFlag;
