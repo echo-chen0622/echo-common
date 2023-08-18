@@ -38,6 +38,12 @@ public class ApiException extends RuntimeException {
         this.args = args;
     }
 
+    public ApiException(Throwable e, Object... args) {
+        super(ResultCode.DEFAULT_ERROR.getMessage(), e);
+        this.resultCode = ResultCode.DEFAULT_ERROR;
+        this.args = args;
+    }
+
     @Contract(pure = true)
     public ResultCode getErrorCode() {
         return resultCode;
