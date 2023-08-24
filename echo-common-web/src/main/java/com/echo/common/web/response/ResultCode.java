@@ -28,6 +28,8 @@ public enum ResultCode {
     TOKEN_EMPTY("登录异常，TOKEN为空，请重新登录", 303),
     CAPTCHA_EXPIRED("验证码异常校验失败", 304),
     RETRY_EXPIRED("密码错误超过{0}次数，请{1}后再试", 304),
+    CALC_CITE_ERROR("计算{0}时，计算式{1}，其引用的变量{2}{5}，{2}的值：{3}，{2}的配置：{4}", 500),
+    CALC_ERROR("计算{0}时，配置计算式{1}，最终计算式{2}值不是数字", 500)
     ;
 
     private final String message;
